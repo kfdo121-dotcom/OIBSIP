@@ -1,31 +1,35 @@
 {
-  "name": "pizza-client",
+  "name": "pizza-server",
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint src --ext js,jsx"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "seed": "node scripts/seedInventory.js",
+    "seed:admin": "node scripts/seedAdmin.js",
+    "test": "node --test tests/"
   },
   "dependencies": {
-    "lucide-react": "^1.52.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.0",
-    "socket.io-client": "^4.7.5"
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.14",
+    "razorpay": "^2.9.4",
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.5",
-    "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^9.39.5",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "globals": "^15.15.0",
-    "vite": "^5.4.0"
-  },
-  "allowScripts": {
-    "esbuild@0.21.5": true
+    "nodemon": "^3.1.4"
   }
 }
